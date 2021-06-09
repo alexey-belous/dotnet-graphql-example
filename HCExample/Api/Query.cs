@@ -8,7 +8,7 @@ namespace HCExample.Api
 {
     public class Query
     {
-        public Book GetBook() =>
+        public Book GetBookById(int bookId) =>
             new Book
             {
                 Title = "C# in depth.",
@@ -17,5 +17,16 @@ namespace HCExample.Api
                     Name = "Jon Skeet"
                 }
             };
+
+        public IEnumerable<Book> GetBooks() =>
+            new Book[]{
+                new Book
+                {
+                    Title = "C# in depth.2",
+                    Author = new Author
+                    {
+                        Name = "Jon Skeet"
+                    }
+                }};
     }
 }
